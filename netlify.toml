@@ -1,0 +1,24 @@
+# Netlify hosts the static React client. Netlify cannot run a long-lived
+# Socket.IO server, so the game server is deployed separately (see render.yaml)
+# and the client is pointed at it with VITE_SERVER_URL.
+
+[build]
+  command = "npm run build:client"
+  publish = "client/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Override in Netlify > Site configuration > Environment variables if your
+  # game server lives somewhere else.
+  VITE_SERVER_URL = "https://ttpadv-server.onrender.com"
+
+# SPA fallback so direct links like https://ttpadv.netlify.app/ABCDE open the room.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

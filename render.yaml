@@ -1,0 +1,18 @@
+# Render Blueprint for the authoritative Socket.IO game server.
+# Render > New > Blueprint > select this repo. The service also serves the
+# built client, so its own URL is a fully playable copy of the game.
+services:
+  - type: web
+    name: ttpadv-server
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Extra comma-separated origins allowed to connect (ttpadv.netlify.app,
+      # its deploy previews and localhost are always allowed).
+      - key: CLIENT_ORIGINS
+        value: https://ttpadv.netlify.app
