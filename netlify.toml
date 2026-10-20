@@ -10,9 +10,9 @@
   NODE_VERSION = "22"
   # Override in Netlify > Site configuration > Environment variables if your
   # game server lives somewhere else.
-  VITE_SERVER_URL = "https://ttpadv-server.onrender.com"
+  VITE_SERVER_URL = "https://tttadv-server.onrender.com"
 
-# SPA fallback so direct links like https://ttpadv.netlify.app/ABCDE open the room.
+# SPA fallback so direct links like https://tttadv.netlify.app/ABCDE open the room.
 [[redirects]]
   from = "/*"
   to = "/index.html"

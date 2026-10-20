@@ -65,10 +65,10 @@ Netlify only serves static files. It can't run a long-lived WebSocket server, so
 ### 1. Game server on Render (free tier)
 
 1. In Render, choose **New → Blueprint** and select this GitHub repo. Render reads `render.yaml`.
-2. The service is named `ttpadv-server`, so its address will be `https://ttpadv-server.onrender.com`. If Render gives you a different address, note it down for step 2.
+2. The service is named `tttadv-server`, so its address will be `https://tttadv-server.onrender.com`. If Render gives you a different address, note it down for step 2.
 3. Open `https://<your-service>.onrender.com/health` and check that it returns `{"ok":true,...}`.
 
-`ttpadv.netlify.app`, its deploy previews and `localhost` are always allowed to connect. To allow other sites, add their addresses, separated by commas, to the `CLIENT_ORIGINS` setting. The Render service also serves the built client, so its own URL is a complete, playable copy of the game.
+`tttadv.netlify.app`, its deploy previews and `localhost` are always allowed to connect. To allow other sites, add their addresses, separated by commas, to the `CLIENT_ORIGINS` setting. The Render service also serves the built client, so its own URL is a complete, playable copy of the game.
 
 Any host that runs Docker will also work, using the `Dockerfile` in this repo (Fly.io, Railway, Koyeb, a VPS, and so on).
 
@@ -79,7 +79,7 @@ Any host that runs Docker will also work, using the `Dockerfile` in this repo (F
    - the publish directory `client/dist`
    - Node 22
    - a fallback rule so links like `/ABCDE` load the app
-2. `netlify.toml` points the client at `https://ttpadv-server.onrender.com` through `VITE_SERVER_URL`. If your server has a different address, set `VITE_SERVER_URL` under **Site configuration → Environment variables**, then redeploy.
-3. Set the site name to `ttpadv` so it's served at <https://ttpadv.netlify.app>.
+2. `netlify.toml` points the client at `https://tttadv-server.onrender.com` through `VITE_SERVER_URL`. If your server has a different address, set `VITE_SERVER_URL` under **Site configuration → Environment variables**, then redeploy.
+3. Set the site name to `tttadv` so it's served at <https://tttadv.netlify.app>.
 
 Render's free tier puts the server to sleep when nobody is using it. The first visitor after a quiet period waits about 30 seconds, and the lobby shows a "Connecting to game server…" message during that time.

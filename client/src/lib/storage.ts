@@ -1,5 +1,5 @@
-const USERNAME_KEY = 'ttpadv:username';
-const SESSION_KEY = 'ttpadv:session';
+const USERNAME_KEY = 'tttadv:username';
+const SESSION_KEY = 'tttadv:session';
 
 export interface StoredSession {
   code: string;

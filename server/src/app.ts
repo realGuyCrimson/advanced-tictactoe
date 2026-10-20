@@ -26,9 +26,9 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 export const DEFAULT_CLIENT_DIST = path.resolve(here, '../../client/dist');
 
 export const DEFAULT_ALLOWED_ORIGINS: (string | RegExp)[] = [
-  'https://ttpadv.netlify.app',
-  // Netlify deploy previews and branch deploys: https://<id>--ttpadv.netlify.app
-  /^https:\/\/[a-z0-9-]+--ttpadv\.netlify\.app$/,
+  'https://tttadv.netlify.app',
+  // Netlify deploy previews and branch deploys: https://<id>--tttadv.netlify.app
+  /^https:\/\/[a-z0-9-]+--tttadv\.netlify\.app$/,
   /^http:\/\/localhost(:\d+)?$/,
   /^http:\/\/127\.0\.0\.1(:\d+)?$/,
 ];

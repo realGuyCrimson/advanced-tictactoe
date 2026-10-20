@@ -9,11 +9,11 @@ const server = createGameServer({
 });
 
 server.httpServer.listen(port, () => {
-  console.log(`[ttpadv] game server listening on http://localhost:${port}`);
+  console.log(`[tttadv] game server listening on http://localhost:${port}`);
 });
 
 const shutdown = (signal: string) => {
-  console.log(`[ttpadv] ${signal} received, shutting down`);
+  console.log(`[tttadv] ${signal} received, shutting down`);
   void server.close().then(() => process.exit(0));
   setTimeout(() => process.exit(0), 3_000).unref();
 };

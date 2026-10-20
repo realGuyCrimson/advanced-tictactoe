@@ -3,7 +3,7 @@
 # built client, so its own URL is a fully playable copy of the game.
 services:
   - type: web
-    name: ttpadv-server
+    name: tttadv-server
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build
@@ -12,7 +12,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "22"
-      # Extra comma-separated origins allowed to connect (ttpadv.netlify.app,
+      # Extra comma-separated origins allowed to connect (tttadv.netlify.app,
       # its deploy previews and localhost are always allowed).
       - key: CLIENT_ORIGINS
-        value: https://ttpadv.netlify.app
+        value: https://tttadv.netlify.app
